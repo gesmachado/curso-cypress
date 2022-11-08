@@ -20,5 +20,8 @@
   "homepage": "https://github.com/gesmachado/curso-cypress#readme",
   "dependencies": {
     "cypress": "^10.10.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
