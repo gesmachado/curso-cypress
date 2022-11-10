@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open"
   },
   "repository": {
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/gesmachado/curso-cypress#readme",
   "dependencies": {
-    "cypress": "^10.10.0"
+    "cypress": "^10.10.0",
+    "dayjs": "^1.11.6"
   },
   "devDependencies": {
     "cypress-xpath": "^2.0.1"

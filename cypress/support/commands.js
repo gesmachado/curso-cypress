@@ -51,3 +51,33 @@ Cypress.Commands.add('resetarBanco', ()=>{
     cy.toastAlert(locators.MESSAGE,'Dados resetados com sucesso!')
 
 })
+
+// API commands
+Cypress.Commands.add('getToken', (email, senha)=>{
+    cy.request({
+        method: 'POST',
+        url: '/signin',
+        body: {
+            email: email,
+            redirecionar: false,
+            senha: senha,
+
+        }
+    }).its('body.token').should('not.be.empty')
+        .then(token => {
+            return token
+        })
+
+})
+
+Cypress.Commands.add('resetarBancoRest', (token)=>{
+    cy.request({
+        method: 'GET',
+        headers: {Authorization : `JWT ${token}`},
+        url: `/reset`,
+        body: {
+
+        }
+    }).its('status').should('be.equal', 200)
+
+})
